@@ -30,7 +30,7 @@
 
     <form
       action="post"
-      action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"
+      action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"
     >
       Name: <input type="text" name="name" /><br />
       E-mail: <input type="text" name="email" /> <br />
@@ -43,7 +43,7 @@
       <input type="radio" name="gender" value="male" /> Male
       <input type="radio" name="gender" value="other" /> Other
       <br />
-      <input type="submit" value="Submit" />
+      <input type="submit" name="submit" value="Submit" />
     </form>
     <?php echo "<h2>Your Input: </h2>"; 
           echo $name;

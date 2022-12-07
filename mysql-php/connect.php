@@ -1,11 +1,11 @@
 <?php
 # basic example on how to connect to a database using the PHP Data Object, PDO 
 $servername = "localhost";
-$username = "username";
-$password = "password";
+$username = "root";
+$password = "Jaqueline12@";
 
 try {
-      $conn = new PDO("mysql:host=$servername;dbname=myDB", $username, $password);
+      $conn = new PDO("mysql:host=$servername;dbname=my_db", $username, $password);
       # set the PDO error to mode exception
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e){
