@@ -9,14 +9,25 @@
   <body>
 
     <?php
+        $nameErr = $emailErr = $genderErr =  "";
         $name = $email = $gender = $comment = $website = "";
 
         if($_SERVER["REQUEST_METHOD"] == "POST"){
-          $name = test_input($_POST["name"]);
-          $email = test_input($_POST["email"]);
-          $website = test_input($_POST["website"]);
+          
+          if(empty($_POST["name"])){ $nameErr = "A name is required";  
+          } else {$name = test_input($_POST["name"]);}
+
+          if(empty($_POST["email"])) { $emailErr = "An email is required "; } 
+          else {$email = test_input($_POST["email"]);}
+
+          if(empty($_POST["website"])) { $website = ""; }
+         else { $website = test_input($_POST["website"]); }
+
+          if(empty($_POST["gender"])) { $genderErr = "Your gender is required "; }
+          else { $gender = test_input($_POST["gender"]); } 
+
           $comment = test_input($_POST["comment"]);
-          $gender = test_input($_POST["gender"]);
+
         }
 
         function test_input($data){
@@ -35,7 +46,9 @@
       method="post"
       action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"
     >
-      Name: <input type="text" name="name" /><br />
+      Name: <input type="text" name="name" /> 
+      <span class="error">*<?php echo $nameErr ?> </span>
+      <br /><br>
       E-mail: <input type="text" name="email" /> <br />
       Website: <input type="text" name="website" /> <br />
       Comment: <br />
