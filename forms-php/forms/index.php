@@ -47,17 +47,21 @@
       action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"
     >
       Name: <input type="text" name="name" /> 
-      <span class="error">*<?php echo $nameErr ?> </span>
+      <span class="error">*<?php echo $nameErr; ?> </span>
       <br /><br>
-      E-mail: <input type="text" name="email" /> <br />
-      Website: <input type="text" name="website" /> <br />
+      E-mail: <input type="text" name="email" />
+      <span class="error">*<?php echo $emailErr; ?> </span>
+      <br /><br>
+      Website: <input type="text" name="website" /> <br /><br>
       Comment: <br />
       <textarea name="comment" cols="30" rows="20"></textarea>
-      <br />
+      <br /><br>
       Gender:
       <input type="radio" name="gender" value="female" /> Female
       <input type="radio" name="gender" value="male" /> Male
       <input type="radio" name="gender" value="other" /> Other
+      <span class="error">*<?php echo $genderErr; ?> </span>
+      <br /><br>
       <br />
       <input type="submit" name="submit" value="Submit" />
     </form>
