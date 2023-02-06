@@ -7,7 +7,8 @@
     <title>Form Validation</title>
   </head>
   <body>
-      <?php
+
+    <?php
         $name = $email = $gender = $comment = $website = "";
 
         if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -26,10 +27,12 @@
         }
       
       ?>
+      
     <h1>PHP Form Validation Example</h1>
 
+    <!-- So, the $_SERVER["PHP_SELF"] sends the submitted form data to the page itself, instead of jumping to a different page. This way, the user will get error messages on the same page as the form. -->
     <form
-      action="post"
+      method="post"
       action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"
     >
       Name: <input type="text" name="name" /><br />
@@ -45,6 +48,8 @@
       <br />
       <input type="submit" name="submit" value="Submit" />
     </form>
+
+
     <?php echo "<h2>Your Input: </h2>"; 
           echo $name;
           echo "<br>";

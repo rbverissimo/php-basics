@@ -41,7 +41,7 @@ echo $txt;
 
 # the main difference between echo and print is that print has a return value of 1; 
 # echo may take multiple param while print can only take one;
-# echo is marginally fast than print;
+# echo is marginally faster than print;
 # print can be used as print or print(); 
 
 print "<h2> Summertime </h2>";

@@ -2,7 +2,7 @@
 # basic example on how to connect to a database using the PHP Data Object, PDO 
 $servername = "localhost";
 $username = "root";
-$password = "Jaqueline12@";
+$password = "123456";
 
 try {
       $conn = new PDO("mysql:host=$servername;dbname=my_db", $username, $password);
